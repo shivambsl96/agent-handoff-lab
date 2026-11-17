@@ -1,0 +1,13 @@
+$ python3 verify.py reports/wrong.json --format-only
+FORMAT ACCEPTED: active_records = 300
+exit 0
+
+$ python3 verify.py reports/wrong.json
+FORMAT ACCEPTED: active_records = 300
+SOURCE REJECTED: reported 300, counted 240 active records
+exit 1
+
+$ python3 verify.py reports/correct.json
+FORMAT ACCEPTED: active_records = 240
+SOURCE VERIFIED: counted 240 active records
+exit 0
